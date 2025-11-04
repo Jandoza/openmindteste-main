@@ -1,0 +1,306 @@
+.psychologist-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(230, 57, 70, 0.08);
+  padding: 25px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-top: 3px solid transparent;
+}
+
+.psychologist-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e63946, #f72585, #e63946);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.psychologist-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(230, 57, 70, 0.2);
+}
+
+.psychologist-card:hover::before {
+  transform: scaleX(1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.avatar {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #e63946 0%, #f72585 100%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.psychologist-card:hover .avatar {
+  transform: scale(1.05);
+}
+
+.header-info h3 {
+  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.experience {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.card-body {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.specialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.specialty-tag {
+  background: linear-gradient(135deg, #e6394615 0%, #f7258515 100%);
+  color: #e63946;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #e6394630;
+}
+
+.description {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.availability {
+  background: linear-gradient(135deg, #ffe6eb 0%, #fff0f5 100%);
+  padding: 14px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ffe6eb;
+  transition: all 0.3s ease;
+}
+
+.availability:hover {
+  box-shadow: 0 2px 8px rgba(230, 57, 70, 0.1);
+}
+
+.availability-label {
+  color: #e63946;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.availability-time {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.card-footer {
+  border-top: 2px solid #f0f0f0;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.request-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #e63946 0%, #f72585 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.request-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.request-btn:hover:not(:disabled)::before {
+  width: 300px;
+  height: 300px;
+}
+
+.request-btn:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+}
+
+.request-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contact-btn-secondary {
+  width: 100%;
+  padding: 12px;
+  background: white;
+  color: #e63946;
+  border: 2px solid #e63946;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(230, 57, 70, 0.15);
+}
+
+.contact-btn-secondary:hover {
+  background: linear-gradient(135deg, #e63946 0%, #f72585 100%);
+  color: white;
+  border-color: transparent;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.3);
+}
+
+.contact-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #e63946 0%, #f72585 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.contact-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+}
+
+.contact-info {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f5f5ff;
+  border-radius: 10px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+
+.contact-info p {
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.contact-note {
+  color: #666;
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.psychologist-view {
+  text-align: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.view-note {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .psychologist-card {
+    padding: 20px;
+  }
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
+  }
+
+  .header-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .specialty-tag {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+}
